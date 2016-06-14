@@ -1,0 +1,36 @@
+{
+  "database": {
+    "username": "VisualMatrix",
+    "password": "**removed**",
+    "db_name": "VisualMatrix",
+    "server": {
+      "name": "vmatrix2008",
+      "include_computer_name": true,
+      "include_login_credentials": true
+    }
+  },
+  "reports": [
+    {
+      "name": "Arrivals",
+      "filename": "VisualMatrix/ArrivalsReport-Classic.sql",
+      "destination": "xxx@xxxx.com"
+    },
+    {
+      "name": "Inventory",
+      "filename": "VisualMatrix/InventoryReport-Classic.sql",
+      "destination": "xxx@xxxx.com"
+    }
+
+  ],
+  "email": {
+    "property": "Best Western Palm Court",
+    "account": {
+      "address": "xxx@xxxx.com",
+      "password": "123password"
+    },
+    "server": {
+      "address": "smtp.gmail.com",
+      "port": 587
+    }
+  }
+}

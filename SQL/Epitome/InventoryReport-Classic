@@ -1,0 +1,13 @@
+SELECT TOP (100) PERCENT ''									AS SortOrder, 
+                         CONVERT(varchar,ar.res_date,101)	AS InventoryDate, 
+                         ''									AS RoomCodeOrder, 
+                         ar.code							AS RoomCode, 
+                         rt.roomtype_group					AS RoomCategory, 
+                         ar.numrooms						AS RoomsAvailable 
+FROM   dbo.availability_rooms ar
+       LEFT OUTER JOIN dbo.z_roomtype rt
+                    ON ar.property = rt.property 
+                       AND ar.code = rt.code 
+WHERE  ( ar.res_date BETWEEN Dateadd(day, -1, Getdate()) AND Dateadd(day, 29, Getdate()) ) 
+       AND (ar.code NOT IN ('HOUSE', 'PERM'))                
+ORDER  BY inventorydate, roomcode       

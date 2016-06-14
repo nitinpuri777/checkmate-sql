@@ -1,0 +1,20 @@
+SELECT crs								AS ConfNum, 
+       CASE 
+         WHEN Charindex(', ', NAME) > 0 THEN LEFT(NAME, ( Charindex(', ', NAME, 1) - 1 )) 
+         ELSE NAME END					AS LastName, 
+       CASE 
+         WHEN Charindex(', ', NAME) > 0 THEN 
+         CONVERT(varchar,REPLACE(Substring(NAME, Charindex(', ',NAME) + 1, ( Len(NAME) - Charindex(', ', NAME) + 1 )),',',''),70) ELSE NULL 
+       END								AS FirstName, 
+       CONVERT(varchar,arrival,101)		AS arrival, 
+       CONVERT(varchar,departure,101)	AS departure, 
+       email, 
+       room_type						AS RoomType,
+       rate_code						AS RateCode, 
+       rate, 
+       program_account					AS Loyalty 
+FROM   dbo.guest 
+WHERE  arrival BETWEEN Dateadd(day, -1, Getdate()) AND Dateadd(day, 1, Getdate()) 
+       AND status = 'R'
+       AND (room_type NOT IN ('HOUSE', 'PERM'))
+ORDER BY arrival

@@ -1,0 +1,41 @@
+{
+  "database": {
+    "username": "VisualMatrix",
+    "password": "1m^G3t{q",
+    "db_name": "VisualMatrix",
+    "server": {
+      "name": "vmatrix2008",
+      "include_computer_name": true,
+      "include_login_credentials": true
+    }
+  },
+  "reports": [
+    {
+      "name": "Welcome",
+      "filename": "Welcome_Report.sql",
+      "destination": "nitin@checkmate.io"
+    },
+    {
+      "name": "Feedback",
+      "filename": "Feedback_Report.sql",
+      "destination": "xxxxxx@checkmate.io"
+    },
+    {
+      "name": "Checkout",
+      "filename": "Checkout_Report.sql",
+      "destination": "xxxxxx@checkmate.io"
+    }
+
+  ],
+  "email": {
+    "property": "Best Western Palm Court",
+    "account": {
+      "address": "dataworker@checkmate.io",
+      "password": "xxxxxx"
+    },
+    "server": {
+      "address": "smtp.gmail.com",
+      "port": 587
+    }
+  }
+}
